@@ -3,10 +3,9 @@ package com.vilksp.springbootmicroservice.model;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.springframework.data.annotation.CreatedDate;
 
 import javax.persistence.*;
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "course")
@@ -27,7 +26,7 @@ public class Course {
     @Column(nullable = false)
     private Double price;
 
-    @CreatedDate
+
     @Column(nullable = false)
-    private LocalDate createTime;
+    private LocalDateTime createTime;
 }

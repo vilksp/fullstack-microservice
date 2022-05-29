@@ -5,6 +5,7 @@ import com.vilksp.springbootmicroservice.repository.CourseRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Service
@@ -14,6 +15,8 @@ public class CourseService {
     private final CourseRepository courseRepository;
 
     public Course saveCourse(Course courseToSave) {
+
+        courseToSave.setCreateTime(LocalDateTime.now());
 
         return courseRepository.save(courseToSave);
     }
